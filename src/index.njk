@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Home
+---
+
+<h1>Hi, I'm Sriragh Karat 👋</h1>
+
+<p>Welcome to my tech blog where I write about embedded systems, ARM architecture, networking, and power-efficient design. I'm documenting my journey in low-level programming and sharing what I learn along the way.</p>
+
+<h2>Recent Posts</h2>
+
+<ul class="post-list">
+{% for post in collections.posts | reverse %}
+  <li>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <p><small>{{ post.date.toDateString() }}</small></p>
+    <p>{{ post.data.description }}</p>
+  </li>
+{% endfor %}
+</ul>
